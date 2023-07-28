@@ -1,9 +1,11 @@
 from paddle import Paddle
 
+
 class Team:
-    def __init__(self):
+    def __init__(self, screen_width):
         self.score = 0
-        self.paddle = Paddle()
+        self.side = None
+        self.paddle = Paddle(screen_width)
 
     def move_paddle_up(self):
         self.paddle.move_up()

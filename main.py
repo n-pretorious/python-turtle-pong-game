@@ -15,10 +15,10 @@ class PongGame:
         self.welcome_message = self.create_turtle()
 
         self.screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
-        self.team_1 = Team()
+        self.team_1 = Team(SCREEN_HEIGHT)
         self.team_1.paddle.set_starting_pos(LEFT_TEAM_STARTING_POSITION)
 
-        self.team_2 = Team()
+        self.team_2 = Team(SCREEN_HEIGHT)
         self.team_2.paddle.set_starting_pos(RIGHT_TEAM_STARTING_POSITION)
 
         self.bind_keys()
