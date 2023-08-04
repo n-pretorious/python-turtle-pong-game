@@ -11,6 +11,9 @@ class ScoreBoard(Turtle):
         self.goto(x=x_cor, y=self._y_cor)
         self.color("white")
 
+    def get_score(self):
+        return self.score
+
     def increase(self, points):
         self.score += points
         self.update_score_display()

@@ -2,7 +2,7 @@ from turtle import Turtle
 import random
 
 MOVE_SPEED = 6
-BALL_RADIUS = 10
+BALL_RADIUS = 2
 
 
 class Ball(Turtle):
@@ -15,9 +15,11 @@ class Ball(Turtle):
         self.penup()
         self.radius = BALL_RADIUS
         self.set_initial_direction()
+        self.ball_speed = 0.05
 
     def set_middle(self):
         self.goto(0, 0)
+        self.ball_speed = 0.05
 
     def set_initial_direction(self):
         self.dx = random.choice([-1, 1]) * MOVE_SPEED
@@ -33,6 +35,7 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.dx *= -1
+        self.ball_speed *= 0.9
 
     def move_up_forward(self):
         self.dx = MOVE_SPEED
